@@ -1,0 +1,21 @@
+{% extends 'main/leyout.html' %}
+
+{% block title %}
+     {{ title }}
+{% endblock %}
+
+{% block content %}
+<font class="main-title">
+     {{ title }} 
+</font>
+<form class="create-form" method="post">
+     {% csrf_token %}
+
+     {{ form.title }}<br>
+     {{ form.anons }}<br>
+     {{ form.full_text }}<br>
+     {{ form.date }}<br>
+     <span>{{ error }}</span>
+     <center><button class="btn btn-info" type="submit">Додати публікацію</button></center>
+</form>
+{% endblock %}

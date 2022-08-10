@@ -1,0 +1,44 @@
+{% load static %}
+<!doctype html>
+<html lang="ua">
+    <head>
+        <title>
+            {% block title %}
+            {% endblock %}
+        </title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{% static 'main/css/style_header.css' %}">
+        <link rel="stylesheet" href="{% static 'main/css/style_button.css' %}">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+        <meta charset="UTF-8">
+    </head>
+    <body background=#A3A3A3>
+        <aside class="header">
+            <ul>
+                <img src="{% static 'main/img/header.jpg' %}" class="logo" alt="Logo" title="Blog">
+                <a class="activ-menu" href="{% url 'home' %}">
+                    <li>&nbsp;Головна</li>
+                </a>
+                <a class="menu" href="{% url 'news_home' %}">
+                    <li>&nbsp;<i class="fas fa-pencil-alt"></i>&nbsp;Новини&nbsp;</li>
+                </a>
+                <a class="menu" href="{% url 'tiles' %}">
+                    <li>&nbsp;Плитки</li>
+                </a>
+                <a class="menu" href="{% url 'random' %}">
+                    <li>&nbsp;Рандом</li>
+                </a>
+                <a class="menu" href="{% url 'about' %}">
+                    <li>&nbsp;Learning Log&nbsp;</li>
+                </a>
+            </ul>
+        </aside>
+        <div class="main">
+            {% block content %}
+            {% endblock %}
+        </div>
+        <footer class="footer">
+            &copy; Вадим Олійник &nbsp;
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,19 @@
+{% extends 'main/leyout.html' %}
+
+{% block title %}
+    {{ article.title }}
+{% endblock %}
+
+{% block content %}
+    <font class="main-title">
+        {{ article.title }}
+    </font>
+    <div class="news">
+        <p> {{ article.date }}</p>
+        <p>{{ article.full_text }}</p>
+        <button class="btb btn-danger"><a href="{% url 'news_delete' article.id %}" class="btn-upd-dlt">Видалити</a></button>
+        <button class="btb btn-info"><a href="{% url 'news_update' article.id %}" class="btn-upd-dlt">Редагувати</a></button>
+        
+    </div>
+{% endblock %}
+

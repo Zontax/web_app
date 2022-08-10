@@ -1,0 +1,15 @@
+{% extends 'main/leyout.html' %}
+
+{% block title %}
+     Видалення запису
+{% endblock %}
+
+{% block content %}
+<font class="main-title">
+     Видалення запису
+</font>
+<form class="create-form" method="post">
+     {% csrf_token %}
+     <center><button class="btn btn-info" type="submit">Видалити запис</button></center>
+</form>
+{% endblock %}

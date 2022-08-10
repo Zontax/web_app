@@ -1,0 +1,15 @@
+{% extends 'main/leyout.html' %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block content %}
+<div clas="features">
+    <font class="main-title">
+        {{ title }}
+    </font>
+    <center><a href="{% url 'news_home' %}" class="btn btn-warning">Перейти до моїх записів</a></center>
+</div>
+{% endblock %}
+

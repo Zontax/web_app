@@ -1,0 +1,28 @@
+{% extends 'main/leyout.html' %}
+
+{% block title %}
+    Новини
+{% endblock %}
+
+{% block content %}
+    <font class="main-title">
+        Новини
+    </font>
+    <div class="news">
+            <a href="{% url 'create' %}">
+                <button class="btn btn-info"><i class="fas fa-pencil-alt"></i>&nbsp;Додати запис</button>
+            </a>
+        {% if news %}
+            {% for el in news %}
+            <div class="alert-news">
+                <h4>{{ el.title }}</h4>
+                <p>{{ el.anons }}</p>
+                <a href="{% url 'news_detail' el.id %}" class="btn btn-warning">Перейти</a>
+            </div>
+            {% endfor %}
+        {% else %}
+            <p>Новин нема!</p>
+        {% endif %}
+    </div>
+{% endblock %}
+
