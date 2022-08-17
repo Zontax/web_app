@@ -21,7 +21,7 @@ def tiles(request):
 def randomint(request):
     data = {
         'title': 'Рандомне число',
-        'randint': random.randint(1, 100),
+        'randint': random.randint(1, 10),
     }
     return render(request, 'main/randint.html', data)
 
